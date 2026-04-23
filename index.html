@@ -10,6 +10,7 @@
   <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f5; min-height: 100vh; }
@@ -20,6 +21,10 @@
 <body>
 <div id="root"></div>
 <script type="text/babel">
+const SUPABASE_URL = "https://ldfqousbkhauynwnbruu.supabase.co";
+const SUPABASE_KEY = "sb_publishable_igstdjvbViE3YJS8WYIPsQ_8DYysveY";
+const db = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
 const { useState, useEffect } = React;
 
 const CATS = ["Personal","Trabajo","Estudio","Salud","Otro"];
@@ -117,7 +122,11 @@ function App() {
   function deleteTask(id) { save(tasks.filter(t => t.id!==id)); }
   function toggleExpand(id) { setExpanded(e => ({...e,[id]:!e[id]})); }
 
-  const filtered = filterCat==="Todas" ? tasks : tasks.filter(t=>t.category===filterCat);
+  if (loading) return (
+    <div style={{display:"flex",alignItems:"center",justifyContent:"center",height:"60vh",color:"#888",fontSize:14}}>
+      Cargando tareas...
+    </div>
+  );==="Todas" ? tasks : tasks.filter(t=>t.category===filterCat);
   const pending  = filtered.filter(t=>!t.done);
   const done     = filtered.filter(t=>t.done);
 
