@@ -126,7 +126,9 @@ function App() {
     <div style={{display:"flex",alignItems:"center",justifyContent:"center",height:"60vh",color:"#888",fontSize:14}}>
       Cargando tareas...
     </div>
-  );==="Todas" ? tasks : tasks.filter(t=>t.category===filterCat);
+  );
+
+  const filtered = filterCat==="Todas" ? tasks : tasks.filter(t=>t.category===filterCat);
   const pending  = filtered.filter(t=>!t.done);
   const done     = filtered.filter(t=>t.done);
 
