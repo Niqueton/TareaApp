@@ -10,7 +10,7 @@
   <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f5; min-height: 100vh; }
@@ -26,6 +26,122 @@ const SUPABASE_KEY = "sb_publishable_igstdjvbViE3YJS8WYIPsQ_8DYysveY";
 const db = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 const { useState, useEffect } = React;
+
+const CATS = ["Personal","Trabajo","Estudio","Salud","Otro"];
+const CAT_COLORS = {
+  Personal: "#7F77DD", Trabajo: "#1D9E75", Estudio: "#378ADD",
+  Salud: "#D4537E", Otro: "#888780"
+};
+const QUAD = [
+  { key:"UI",   label:"Urgente + Importante",       color:"#E24B4A", bg:"#FCEBEB" },
+  { key:"NUI",  label:"No urgente + Importante",    color:"#1D9E75", bg:"#E1F5EE" },
+  { key:"UNI",  label:"Urgente + No importante",    color:"#BA7517", bg:"#FAEEDA" },
+  { key:"NUNI", label:"No urgente + No importante", color:"#888780", bg:"#F1EFE8" },
+];
+function getQuad(imp, urg) {
+  if (imp && urg)  return "UI";
+  if (imp && !urg) return "NUI";
+  if (!imp && urg) return "UNI";
+  return "NUNI";
+}
+const EMPTY_FORM = { title:"", category:"Personal", deadline:"", important:false, urgent:false, subtasks:[] };
+
+function agendaGroups(tasks) {
+  const today    = new Date(); today.setHours(0,0,0,0);
+  const tomorrow = new Date(today); tomorrow.setDate(today.getDate()+1);
+  const weekEnd  = new Date(today); weekEnd.setDate(today.getDate()+7);
+  const groups = [
+    { key:"overdue",  label:"Vencidas",        color:"#E24B4A", tasks:[] },
+    { key:"today",    label:"Hoy",              color:"#D4537E", tasks:[] },
+    { key:"tomorrow", label:"Mañana",           color:"#BA7517", tasks:[] },
+    { key:"week",     label:"Esta semana",      color:"#1D9E75", tasks:[] },
+    { key:"later",    label:"Más adelante",     color:"#378ADD", tasks:[] },
+    { key:"none",     label:"Sin fecha",        color:"#888780", tasks:[] },
+  ];
+  tasks.filter(t => !t.done).forEach(t => {
+    if (!t.deadline) { groups[5].tasks.push(t); return; }
+    const d = new Date(t.deadline); d.setHours(0,0,0,0);
+    if      (d < today)                        groups[0].tasks.push(t);
+    else if (d.getTime()===today.getTime())    groups[1].tasks.push(t);
+    else if (d.getTime()===tomorrow.getTime()) groups[2].tasks.push(t);
+    else if (d <= weekEnd)                     groups[3].tasks.push(t);
+    else                                       groups[4].tasks.push(t);
+  });
+  return groups.filter(g => g.tasks.length > 0);
+}
+
+function App() {
+  const [tasks,     setTasks]     = useState([]);
+  const [loading,   setLoading]   = useState(true);
+  const [view,      setView]      = useState("lista");
+  const [showForm,  setShowForm]  = useState(false);
+  const [form,      setForm]      = useState(EMPTY_FORM);
+  const [newSub,    setNewSub]    = useState("");
+  const [filterCat, setFilterCat] = useState("Todas");
+  const [editId,    setEditId]    = useState(null);
+  const [expanded,  setExpanded]  = useState({});
+
+  useEffect(() => {
+    loadTasks();
+    const sub = db.channel("tareas_changes")
+      .on("postgres_changes", { event:"*", schema:"public", table:"tareas" }, () => loadTasks())
+      .subscribe();
+    return () => sub.unsubscribe();
+  }, []);
+
+  async function loadTasks() {
+    const { data } = await db.from("tareas").select("*").order("created_at");
+    if (data) setTasks(data);
+    setLoading(false);
+  }
+
+  function openNew()  { setForm(EMPTY_FORM); setEditId(null); setShowForm(true); setNewSub(""); }
+  function openEdit(task) {
+    setForm({ title:task.title, category:task.category, deadline:task.deadline||"",
+              important:task.important, urgent:task.urgent, subtasks:[...task.subtasks] });
+    setEditId(task.id); setShowForm(true); setNewSub("");
+  }
+  function addSub() {
+    if (!newSub.trim()) return;
+    setForm(f => ({ ...f, subtasks:[...f.subtasks,{text:newSub.trim(),done:false}] }));
+    setNewSub("");
+  }
+  function removeSub(i) { setForm(f => ({ ...f, subtasks:f.subtasks.filter((_,j)=>j!==i) })); }
+
+  async function submitForm() {
+    if (!form.title.trim()) return;
+    const payload = { title:form.title, category:form.category, deadline:form.deadline||null,
+                      important:form.important, urgent:form.urgent, subtasks:form.subtasks,
+                      quad:getQuad(form.important,form.urgent) };
+    if (editId) {
+      await db.from("tareas").update(payload).eq("id", editId);
+    } else {
+      await db.from("tareas").insert(payload);
+    }
+    await loadTasks();
+    setShowForm(false);
+  }
+
+  async function toggleDone(id) {
+    const t = tasks.find(t => t.id===id);
+    await db.from("tareas").update({ done:!t.done }).eq("id", id);
+    await loadTasks();
+  }
+  async function toggleSub(tid, si) {
+    const t = tasks.find(t => t.id===tid);
+    const subs = t.subtasks.map((s,i) => i===si ? {...s,done:!s.done} : s);
+    await db.from("tareas").update({ subtasks:subs }).eq("id", tid);
+    await loadTasks();
+  }
+  async function deleteTask(id) {
+    await db.from("tareas").delete().eq("id", id);
+    await loadTasks();
+  }
+  function toggleExpand(id) { setExpanded(e => ({...e,[id]:!e[id]})); }
+
+  const filtered = filterCat==="Todas" ? tasks : tasks.filter(t=>t.category===filterCat);
+  const pending  = filtered.filter(t=>!t.done);
+  const done     = filtered.filter(t=>t.done);
 
 const CATS = ["Personal","Trabajo","Estudio","Salud","Otro"];
 const CAT_COLORS = {
@@ -127,7 +243,6 @@ function App() {
       Cargando tareas...
     </div>
   );
-
   const filtered = filterCat==="Todas" ? tasks : tasks.filter(t=>t.category===filterCat);
   const pending  = filtered.filter(t=>!t.done);
   const done     = filtered.filter(t=>t.done);
@@ -367,4 +482,3 @@ ReactDOM.createRoot(document.getElementById("root")).render(<App />);
 </script>
 </body>
 </html>
-```
