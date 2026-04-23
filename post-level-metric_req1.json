@@ -1,0 +1,447 @@
+{
+            "report": "POST_INSIGHTS",
+            "reportingEngine": "PLATFORM",
+            "timeField": null,
+            "startTime": 1640991600000,
+            "endTime": 1672527599999,
+            "timeZone": "Europe/Zurich",
+            "page": 0,
+            "pageSize": 20,
+            "filters": null,
+            "groupBys": [
+                {
+                    "heading": "POST_ID_NO_LOOKUP_0",
+                    "dimensionName": "POST_ID_NO_LOOKUP",
+                    "groupType": "FIELD",
+                    "details": {},
+                    "namedFilters": null
+                }
+            ],
+            "projections": [
+                {
+                    "heading": "M_POST_INSIGHTS_TOTAL_ENGAGEMENT_0",
+                    "measurementName": "TOTAL_ENGAGEMENT",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_INSTAGRAM_BUSINESS_POST_ENGAGEMENT_1",
+                    "measurementName": "INSTAGRAM_BUSINESS_POST_ENGAGEMENT",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_POST_FB_NATIVE_ENGAGEMENT_2",
+                    "measurementName": "POST_FB_NATIVE_ENGAGEMENT",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_POST_LIKE_COUNT_3",
+                    "measurementName": "POST_LIKE_COUNT",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_INSTAGRAM_POST_LIKES_COUNT_4",
+                    "measurementName": "INSTAGRAM_POST_LIKES_COUNT",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_POST_TOTAL_REACTION_COUNT_5",
+                    "measurementName": "POST_TOTAL_REACTION_COUNT",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_POST_TWITTER_FAVORITES_COUNT_6",
+                    "measurementName": "POST_TWITTER_FAVORITES_COUNT",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_YOUTUBE_VIDEO_LIKES_7",
+                    "measurementName": "YOUTUBE_VIDEO_LIKES",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_TIKTOK_VIDEO_LIKES_8",
+                    "measurementName": "TIKTOK_VIDEO_LIKES",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_ENGAGEMENT_RATE_9",
+                    "measurementName": "ENGAGEMENT_RATE",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_YOUTUBE_VIDEO_VIEWS_10",
+                    "measurementName": "YOUTUBE_VIDEO_VIEWS",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_TWITTER_VIDEO_VIEWS_11",
+                    "measurementName": "TWITTER_VIDEO_VIEWS",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_TIKTOK_VIDEO_VIEWS_12",
+                    "measurementName": "TIKTOK_VIDEO_VIEWS",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_INSTAGRAM_POST_VIEWS_COUNT_13",
+                    "measurementName": "INSTAGRAM_POST_VIEWS_COUNT",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_POST_FB_VIDEO_VIEWS_14",
+                    "measurementName": "POST_FB_VIDEO_VIEWS",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_INSTAGRAM_BUSINESS_POST_REACH_15",
+                    "measurementName": "INSTAGRAM_BUSINESS_POST_REACH",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_POST_FB_IMPRESSIONS_UNIQUE_16",
+                    "measurementName": "POST_FB_IMPRESSIONS_UNIQUE",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_POST_REACH_COUNT_17",
+                    "measurementName": "POST_REACH_COUNT",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_POST_TWITTER_REACH_COUNT_18",
+                    "measurementName": "POST_TWITTER_REACH_COUNT",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_TIKTOK_VIDEO_REACH_19",
+                    "measurementName": "TIKTOK_VIDEO_REACH",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_POST_FB_STREAM_COMMENT_COUNT_20",
+                    "measurementName": "POST_FB_STREAM_COMMENT_COUNT",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_INSTAGRAM_POST_COMMENTS_COUNT_21",
+                    "measurementName": "INSTAGRAM_POST_COMMENTS_COUNT",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_POST_COMMENT_COUNT_22",
+                    "measurementName": "POST_COMMENT_COUNT",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_POST_TWITTER_REPLIES_COUNT_23",
+                    "measurementName": "POST_TWITTER_REPLIES_COUNT",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_YOUTUBE_VIDEO_COMMENTS_24",
+                    "measurementName": "YOUTUBE_VIDEO_COMMENTS",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_TIKTOK_VIDEO_COMMENTS_25",
+                    "measurementName": "TIKTOK_VIDEO_COMMENTS",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_POST_FB_STREAM_SHARE_COUNT_26",
+                    "measurementName": "POST_FB_STREAM_SHARE_COUNT",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_INSTAGRAM_BUSINESS_POST_SHARES_27",
+                    "measurementName": "INSTAGRAM_BUSINESS_POST_SHARES",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_POST_SHARE_COUNT_28",
+                    "measurementName": "POST_SHARE_COUNT",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_POST_TWITTER_RETWEETS_COUNT_29",
+                    "measurementName": "POST_TWITTER_RETWEETS_COUNT",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_YOUTUBE_VIDEO_SHARES_30",
+                    "measurementName": "YOUTUBE_VIDEO_SHARES",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_TIKTOK_VIDEO_SHARES_31",
+                    "measurementName": "TIKTOK_VIDEO_SHARES",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_TWITTER_URL_CLICKS_32",
+                    "measurementName": "TWITTER_URL_CLICKS",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_POST_FB_CONSUMPTIONS_BY_TYPE_LINK_CLICKS_33",
+                    "measurementName": "POST_FB_CONSUMPTIONS_BY_TYPE_LINK_CLICKS",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_LINK_CLICKS_FB_TW3050_34",
+                    "measurementName": "LINK_CLICKS_FB_TW3050",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_INSTAGRAM_BUSINESS_POST_SAVED_35",
+                    "measurementName": "INSTAGRAM_BUSINESS_POST_SAVED",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_TWITTER_USER_FOLLOWS_36",
+                    "measurementName": "TWITTER_USER_FOLLOWS",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_INSTAGRAM_POST_FOLLOWS_COUNT_37",
+                    "measurementName": "INSTAGRAM_POST_FOLLOWS_COUNT",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_YOUTUBE_VIDEO_SUBSCRIBERS_GAINED_38",
+                    "measurementName": "YOUTUBE_VIDEO_SUBSCRIBERS_GAINED",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_INSTAGRAM_BUSINESS_POST_REEL_AVERAGE_WATCH_TIME_39",
+                    "measurementName": "INSTAGRAM_BUSINESS_POST_REEL_AVERAGE_WATCH_TIME",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_INSTAGRAM_BUSINESS_POST_REEL_TOTAL_WATCH_TIME_40",
+                    "measurementName": "INSTAGRAM_BUSINESS_POST_REEL_TOTAL_WATCH_TIME",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_INSTAGRAM_POST_REELS_SKIP_RATE_41",
+                    "measurementName": "INSTAGRAM_POST_REELS_SKIP_RATE",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_YOUTUBE_VIDEO_AVERAGE_VIEW_DURATION_42",
+                    "measurementName": "YOUTUBE_VIDEO_AVERAGE_VIEW_DURATION",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_POST_FB_VIDEO_VIEW_TIME_43",
+                    "measurementName": "POST_FB_VIDEO_VIEW_TIME",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_YOUTUBE_VIDEO_ESTIMATED_MINUTES_WATCHED_44",
+                    "measurementName": "YOUTUBE_VIDEO_ESTIMATED_MINUTES_WATCHED",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_TIKTOK_VIDEO_TOTAL_TIME_WATCHED_45",
+                    "measurementName": "TIKTOK_VIDEO_TOTAL_TIME_WATCHED",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_POST_FB_VIDEO_AVG_TIME_WATCHED_46",
+                    "measurementName": "POST_FB_VIDEO_AVG_TIME_WATCHED",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_TIKTOK_VIDEO_AVERAGE_TIME_WATCHED_47",
+                    "measurementName": "TIKTOK_VIDEO_AVERAGE_TIME_WATCHED",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_INSTAGRAM_POST_STORY_NAVIGATION_TAP_EXIT_48",
+                    "measurementName": "INSTAGRAM_POST_STORY_NAVIGATION_TAP_EXIT",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_INSTAGRAM_POST_STORY_NAVIGATION_TAP_BACK_49",
+                    "measurementName": "INSTAGRAM_POST_STORY_NAVIGATION_TAP_BACK",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_INSTAGRAM_POST_STORY_NAVIGATION_TAP_FORWARD_50",
+                    "measurementName": "INSTAGRAM_POST_STORY_NAVIGATION_TAP_FORWARD",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_INSTAGRAM_POST_STORY_NAVIGATION_SWIPE_FORWARD_51",
+                    "measurementName": "INSTAGRAM_POST_STORY_NAVIGATION_SWIPE_FORWARD",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_INSTAGRAM_POST_TOTAL_STORY_NAVIGATION_52",
+                    "measurementName": "INSTAGRAM_POST_TOTAL_STORY_NAVIGATION",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_COMPLETION_RATE_53",
+                    "measurementName": "COMPLETION_RATE",
+                    "aggregateFunction": "AVG",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_INSTAGRAM_POST_REPOSTS_54",
+                    "measurementName": "INSTAGRAM_POST_REPOSTS",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_POST_FB_IMPRESSIONS_FAN_UNIQUE_55",
+                    "measurementName": "POST_FB_IMPRESSIONS_FAN_UNIQUE",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_TOTAL_VIDEO_VIEWS_SOUND_ON_56",
+                    "measurementName": "TOTAL_VIDEO_VIEWS_SOUND_ON",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_TIKTOK_FULL_VIDEO_WATCHED_RATE_57",
+                    "measurementName": "TIKTOK_FULL_VIDEO_WATCHED_RATE",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_TOTAL_VIDEO_30S_VIEWS_58",
+                    "measurementName": "TOTAL_VIDEO_30S_VIEWS",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_TOTAL_VIDEO_COMPLETE_VIEWS_59",
+                    "measurementName": "TOTAL_VIDEO_COMPLETE_VIEWS",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_TWITTER_VIDEO_VIEWED_100_60",
+                    "measurementName": "TWITTER_VIDEO_VIEWED_100",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_TWITTER_VIDEO_VIEWED_75_61",
+                    "measurementName": "TWITTER_VIDEO_VIEWED_75",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_TWITTER_VIDEO_VIEWED_50_62",
+                    "measurementName": "TWITTER_VIDEO_VIEWED_50",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_TWITTER_VIDEO_VIEWED_25_63",
+                    "measurementName": "TWITTER_VIDEO_VIEWED_25",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_YOUTUBE_VIDEO_AVERAGE_VIEW_PERCENTAGE_64",
+                    "measurementName": "YOUTUBE_VIDEO_AVERAGE_VIEW_PERCENTAGE",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_YOUTUBE_VIDEO_ENGAGED_VIEWS_65",
+                    "measurementName": "YOUTUBE_VIDEO_ENGAGED_VIEWS",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                },
+                {
+                    "heading": "M_POST_INSIGHTS_YOUTUBE_VIDEO_DISLIKES_66",
+                    "measurementName": "YOUTUBE_VIDEO_DISLIKES",
+                    "aggregateFunction": "SUM",
+                    "details": {}
+                }
+            ],
+            "projectionDecorations": [],
+            "projectionFilters": null,
+            "sorts": null,
+            "streamRequestInfo": null,
+            "additional": {
+                "Timezone": "Europe/Zurich",
+                "translateResponse": "false",
+                "fetchUnhealthyAccounts": "false",
+                "widgetId": "69e0b2bb2cc1b95bd68d38b4",
+                "appendClientAccessibleFilters": "true",
+                "exportInfo": "false",
+                "MARGIN": "false",
+                "dashboardId": "69e0b2ba2cc1b95bd68d3633",
+                "engine": "PLATFORM",
+                "showTotal": "true",
+                "chartType": "TABLE",
+                "showRolloverTrends": "false",
+                "appendAccountAccessibleFilters": "true",
+                "ignoreEventBasedDataFilter": "true",
+                "TABULAR": "true"
+            },
+            "skipResolve": false,
+            "jsonResponse": false
+        }
